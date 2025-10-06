@@ -18,13 +18,23 @@
 
       <div class="form-group">
         <label for="setor">Setor:</label>
-        <input type="text" id="setor" name="setor" placeholder="Digite seu setor" required>
+		<select id="setor" name="setor"  required>
+		<option value="null">Selecione seu setor</option>
+          <option value="Segurança">Segurança</option>
+          <option value="Higiene">Higiene</option>
+		  <option value="Enfermagem">Enfermagem</option>
+		  <option value="Raio X">Raio X</option>
+		  <option value="CPD">CPD</option>
+		  <option value="Recepção">Recepção</option>
+		  <option value="Laboratorio">Laboratorio</option>
+		  <option value="Sem Setor">Sem Setor</option>
+        </select>
       </div>
 
       <div class="form-group">
         <label for="arroz">Arroz:</label>
         <select id="arroz" name="arroz" required>
-          <option value="">Selecione o tipo de arroz</option>
+		<option value="null">Selecione seu tipo de arroz</option>
           <option value="Arroz branco">Arroz branco</option>
           <option value="Arroz integral">Arroz integral</option>
         </select>
@@ -32,22 +42,22 @@
 
       <div class="form-group">
         <label for="feijao">Feijão:</label>
-        <select id="feijao" name="feijao" required>
-          <option value="">Selecione</option>
+        <select id="feijao" name="feijao"  required>
+		<option value="null">Com ou Sem</option>
           <option value="Com feijão">Com feijão</option>
           <option value="Sem feijão">Sem feijão</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="mistura">Mistura:</label>
-        <select id="mistura" name="mistura" required>
-          <option value="">Selecione</option>
-          <option value="Mistura do dia">0</option>
-          <option value="Ovo frito">Ovo frito</option>
-          <option value="Ovo cozido">Ovo cozido</option>
-        </select>
-      </div>
+      <p id="mistura-dia-info" class="info">🍽 Mistura do dia: carregando...</p>
+
+<select id="mistura" name="mistura" required>
+  <option value="">Selecione</option>
+  <option value="Mistura do dia">Mistura do dia</option>
+  <option value="Ovo frito">Ovo frito</option>
+  <option value="Ovo cozido">Ovo cozido</option>
+</select>
+
 
       <button type="submit">Enviar Pedido</button>
     </form>
@@ -57,8 +67,13 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+  fetch("https://script.google.com/macros/s/AKfycbx123abcXYZ/exec")
+  .then(r => r.json())
+  .then(data => console.log(data.misturaDoDia));
+
+</script>
 
 
 </body>
 </html>
-

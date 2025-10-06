@@ -68,7 +68,9 @@ button {
   font-size: 1rem;
   cursor: pointer;
   transition: 0.2s;
+  margin-top: 15px; /* 👈 adiciona espaço acima do botão */
 }
+
 
 button:hover {
   background-color: #0056b3;
