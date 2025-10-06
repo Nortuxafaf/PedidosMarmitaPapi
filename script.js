@@ -5,7 +5,7 @@ fetch("cardapio.txt")
   .then((response) => response.text())
   .then((texto) => {
     // Procura a linha com "Mistura do dia:"
-    const match = texto.match(/Mistura do dia:\s*(.+)/i);
+    const match = texto.match(/0:\s*(.+)/i);
     if (match) {
       misturaDoDia = match[1].trim(); // salva na variável
 
@@ -72,3 +72,4 @@ document.getElementById("pedidoForm").addEventListener("submit", function (e) {
       document.getElementById("mensagem").style.color = "#ff5555";
     });
 });
+
