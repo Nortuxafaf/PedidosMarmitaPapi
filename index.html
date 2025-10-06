@@ -58,14 +58,15 @@
   <script src="script.js"></script>
   <script>
 window.onload = function() {
-  fetch("https://script.google.com/macros/s/AKfycbw0phz77NWZ8aC57hVr0N0ZQ56ahGWiGsT0Om3GnDUptl8OaRlJzLhOaSmhF9aHAY8Q/exec") // substitua pela URL do seu Web App
-    .then(response => response.json()) // lê o JSON retornado
-    .then(data => {
-      console.log("Valor retornado da planilha:", data.valor);
-    })
+ fetch('https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbw0phz77NWZ8aC57hVr0N0ZQ56ahGWiGsT0Om3GnDUptl8OaRlJzLhOaSmhF9aHAY8Q/exec')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+  
     .catch(err => console.error("Erro ao buscar o valor:", err));
 };
 </script>
 
 </body>
 </html>
+
