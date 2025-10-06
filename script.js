@@ -1,25 +1,28 @@
-// === Atualiza "Mistura do dia" conforme o cardapio.txt ===
+// === Lê o cardapio.txt e atualiza o campo de mistura ===
+let misturaDoDia = ""; // variável global para guardar o valor
+
 fetch("cardapio.txt")
   .then((response) => response.text())
   .then((texto) => {
-    // Procura uma linha que contenha "Mistura do dia:"
+    // Procura a linha com "Mistura do dia:"
     const match = texto.match(/Mistura do dia:\s*(.+)/i);
     if (match) {
-      const misturaDoDia = match[1].trim();
+      misturaDoDia = match[1].trim(); // salva na variável
 
-      // Atualiza a opção no <select id="mistura">
+      // Atualiza o campo de mistura no HTML
       const selectMistura = document.getElementById("mistura");
       const opcaoDoDia = selectMistura.querySelector("option[value='Mistura do dia']");
       if (opcaoDoDia) {
         opcaoDoDia.textContent = misturaDoDia;
         opcaoDoDia.value = misturaDoDia;
       }
+
+      console.log("Mistura do dia carregada:", misturaDoDia);
     }
   })
   .catch((err) => {
     console.error("Erro ao carregar o cardápio:", err);
   });
-
 
 document.getElementById("pedidoForm").addEventListener("submit", function (e) {
   e.preventDefault();
