@@ -43,7 +43,7 @@
         <label for="mistura">Mistura:</label>
         <select id="mistura" name="mistura" required>
           <option value="">Selecione</option>
-          <option value="Mistura do dia"id="valorA2></option>
+          <option value="Mistura do dia">Mistura do dia</option>
           <option value="Ovo frito">Ovo frito</option>
           <option value="Ovo cozido">Ovo cozido</option>
         </select>
@@ -52,21 +52,12 @@
       <button type="submit">Enviar Pedido</button>
     </form>
 
+
     <p id="mensagem" class="mensagem"></p>
   </div>
 
   <script src="script.js"></script>
-  <script>
-window.onload = function() {
- fetch('https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbw0phz77NWZ8aC57hVr0N0ZQ56ahGWiGsT0Om3GnDUptl8OaRlJzLhOaSmhF9aHAY8Q/exec')
-  .then(response => response.json())
-  .then(data => console.log(data));
 
-  
-    .catch(err => console.error("Erro ao buscar o valor:", err));
-};
-</script>
 
 </body>
 </html>
-

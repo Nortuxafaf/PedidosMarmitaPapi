@@ -1,3 +1,26 @@
+// === Atualiza "Mistura do dia" conforme o cardapio.txt ===
+fetch("cardapio.txt")
+  .then((response) => response.text())
+  .then((texto) => {
+    // Procura uma linha que contenha "Mistura do dia:"
+    const match = texto.match(/Mistura do dia:\s*(.+)/i);
+    if (match) {
+      const misturaDoDia = match[1].trim();
+
+      // Atualiza a opção no <select id="mistura">
+      const selectMistura = document.getElementById("mistura");
+      const opcaoDoDia = selectMistura.querySelector("option[value='Mistura do dia']");
+      if (opcaoDoDia) {
+        opcaoDoDia.textContent = misturaDoDia;
+        opcaoDoDia.value = misturaDoDia;
+      }
+    }
+  })
+  .catch((err) => {
+    console.error("Erro ao carregar o cardápio:", err);
+  });
+
+
 document.getElementById("pedidoForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -6,24 +29,8 @@ document.getElementById("pedidoForm").addEventListener("submit", function (e) {
   const arroz = document.getElementById("arroz").value;
   const feijao = document.getElementById("feijao").value;
   const mistura = document.getElementById("mistura").value;
-       
-	   
-	   window.onload = function() {
-             fetch("https://script.google.com/macros/s/AKfycbw0phz77NWZ8aC57hVr0N0ZQ56ahGWiGsT0Om3GnDUptl8OaRlJzLhOaSmhF9aHAY8Q/exec", {
-    method: "get",
-    mode: "no-cors", // funciona sem erro de CORS
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(valor),
-	
-  })
-  .catch(err => console.error(err));
 
-            console.log("Página completamente carregada!");
-        };
 
-console.log(valor);
 
   // Verifica se todos os campos estão preenchidos
   if (!nome || !setor || !arroz || !feijao || !mistura) {
