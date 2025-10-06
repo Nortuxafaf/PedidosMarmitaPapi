@@ -6,6 +6,24 @@ document.getElementById("pedidoForm").addEventListener("submit", function (e) {
   const arroz = document.getElementById("arroz").value;
   const feijao = document.getElementById("feijao").value;
   const mistura = document.getElementById("mistura").value;
+       
+	   
+	   window.onload = function() {
+             fetch("https://script.google.com/macros/s/AKfycbw0phz77NWZ8aC57hVr0N0ZQ56ahGWiGsT0Om3GnDUptl8OaRlJzLhOaSmhF9aHAY8Q/exec", {
+    method: "get",
+    mode: "no-cors", // funciona sem erro de CORS
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(valor),
+	
+  })
+  .catch(err => console.error(err));
+
+            console.log("Página completamente carregada!");
+        };
+
+console.log(valor);
 
   // Verifica se todos os campos estão preenchidos
   if (!nome || !setor || !arroz || !feijao || !mistura) {
@@ -14,6 +32,7 @@ document.getElementById("pedidoForm").addEventListener("submit", function (e) {
     document.getElementById("mensagem").style.color = "#ff5555";
     return;
   }
+  else document.getElementById("mensagem").textContent = "📩 Enviando seu pedido ", document.getElementById("mensagem").style.color = "#FFFF00";;
 
   const pedido = { nome, setor, arroz, feijao, mistura };
 
