@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de Marmita PAPI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pedido de Marmita PAPI</h1>
+
+    <form id="pedidoForm" novalidate>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="setor">Setor:</label>
+        <input type="text" id="setor" name="setor" placeholder="Digite seu setor" required>
+      </div>
+
+      <div class="form-group">
+        <label for="arroz">Arroz:</label>
+        <select id="arroz" name="arroz" required>
+          <option value="">Selecione o tipo de arroz</option>
+          <option value="Arroz branco">Arroz branco</option>
+          <option value="Arroz integral">Arroz integral</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="feijao">Feijão:</label>
+        <select id="feijao" name="feijao" required>
+          <option value="">Selecione</option>
+          <option value="Com feijão">Com feijão</option>
+          <option value="Sem feijão">Sem feijão</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="mistura">Mistura:</label>
+        <select id="mistura" name="mistura" required>
+          <option value="">Selecione</option>
+          <option value="Mistura do dia">Mistura do dia</option>
+          <option value="Ovo frito">Ovo frito</option>
+          <option value="Ovo cozido">Ovo cozido</option>
+        </select>
+      </div>
+
+      <button type="submit">Enviar Pedido</button>
+    </form>
+
+    <p id="mensagem" class="mensagem"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

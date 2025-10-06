@@ -1,0 +1,110 @@
+/* --- Reset básico --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Corpo e container --- */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0b2239;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: #142b4c;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* --- Título --- */
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* --- Formulário --- */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+}
+
+input:invalid, select:invalid {
+  border: 1px solid #ff5555;
+}
+
+/* --- Botão --- */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* --- Mensagem --- */
+.mensagem {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #00ff99;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input, select, button {
+    font-size: 0.95rem;
+    padding: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}
